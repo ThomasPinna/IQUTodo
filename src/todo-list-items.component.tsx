@@ -1,11 +1,10 @@
-import {edit_todo, Todo} from "./todo";
+import {Todo} from "./todo";
 import {ActionPanel, Icon, List} from "@raycast/api";
 import {ToggleTodoAction} from "./todo-toggle.component";
 import {EditTodoAction} from "./todo-edit.component";
 import {TogglePriority} from "./todo-toggle-priority.component";
 import {CreateTodoAction, CreateTopPriorityTodoAction} from "./todo-create.component";
 import {GetAccessories} from "./todo-list-accessories";
-import { title } from "process";
 
 export function TodoListItems(props: {
   todos: Todo[],

@@ -45,8 +45,8 @@ export function has_text(text: string): (todo: Todo) => boolean {
     if (matches[1].startsWith("q"))
       return (todo: Todo) => todo.quick == value
 
-    // todo give error
-    return todo => false
+    // if it didn't match, then don't filter.
+    return () => true
 
   }
 
