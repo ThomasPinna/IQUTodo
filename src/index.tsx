@@ -1,7 +1,7 @@
-import {ActionPanel, Icon, List} from "@raycast/api";
+import { ActionPanel, environment, Icon, List } from "@raycast/api";
 import {useEffect, useState} from "react";
 import {create_todo, edit_todo, has_text, Todo} from "./todo";
-import {load_todos, store_dones, store_todos} from "./persist";
+import { load_todos, store_dones, store_todos, to_backup } from "./persist";
 import {CreateTodoAction, CreateTopPriorityTodoAction} from "./todo-create.component";
 import {TodoListItems} from "./todo-list-items.component";
 
@@ -28,6 +28,9 @@ export default function Command() {
     })
   }
 
+  useEffect(()=> {
+    to_backup.next([todos, dones])
+  }, [todos, dones])
 
   useEffect(() => {
     if (!loading) {

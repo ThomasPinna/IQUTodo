@@ -6,9 +6,10 @@ This [Raycast](https://raycast.com/) extension helps you manage your to-dos by a
 
 When you create a new to-do, you can mark it with any of the following flags.
 
-- *Urgency*: This to-do has a deadline, and it feels relatively close by.  
 - *Importance*: This to-do is relatively important compared to other tasks. 
 - *Quickness*: This to-do can be completed with relatively low effort.
+- *Urgency*: This to-do has a deadline, and it feels relatively close by.  
+
 
 Based on these flags a score is assigned to these to-dos. The basic formula is as follows:
 ```python
@@ -46,8 +47,10 @@ Basic filtering is supported, just start typing:
 - [x] Automatic ordering 
 - [x] Quick toggle priority
 - [x] Filtering to-dos using queries
+- [x] Backups
+- [ ] Restore backups
 - [ ] Attach a url or link to the task
-- [ ] Backups
+- [ ] Better state management (single state?)
 - [ ] Categories or labels
 - [ ] Automated tests
 - [ ] Remote persistence
@@ -55,6 +58,7 @@ Basic filtering is supported, just start typing:
 - [ ] Checklists in a to-do
 - [ ] Allow configuring the weights 
 - [ ] Import / Export
+- [ ] Action for quickly adding a todo
 
 ## Contributions
 

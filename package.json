@@ -19,7 +19,8 @@
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.48.3"
+    "@raycast/api": "^1.48.3",
+    "rxjs": "^7.8.0"
   },
   "devDependencies": {
     "@types/node": "18.8.3",
