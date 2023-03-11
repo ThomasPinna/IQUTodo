@@ -62,7 +62,6 @@ export function restore_todos(to_restore: Todo[], set_todos: (todo: Todo[]) => v
   const todos = to_restore.filter(todo => !todo.isCompleted);
   const dones = to_restore.filter(todo => todo.isCompleted);
   todos.sort((a, b) => priority_score(b) - priority_score(a));
-  console.log(todos)
   set_todos(todos);
   set_dones(dones);
 }
