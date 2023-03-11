@@ -10,7 +10,8 @@ export function EditTodoAction(props: { onUpdate: (todo: Todo) => void, todo: To
       shortcut={{modifiers: ["cmd"], key: "e"}}
       target={
         <TodoForm onCreate={props.onUpdate}
-                  todo={props.todo}/>
+                  todo={props.todo}
+        />
       }
     />
   );

@@ -1,4 +1,4 @@
-import {Color, Icon} from "@raycast/api";
+import { Color, environment, Icon } from "@raycast/api";
 
 export const todo_icons= {
   urgent: { source: Icon.Alarm, tintColor: Color.Red },
@@ -20,3 +20,6 @@ export const gray_todo_icons= {
 
 export const IQU_STORAGE_KEY = "IQU_TODO_LIST";
 export const IQU_STORAGE_KEY_DONE = "IQU_DONE_LIST";
+
+export const BACKUP_PATH = environment.supportPath
+
