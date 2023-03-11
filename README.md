@@ -43,8 +43,8 @@ Basic filtering is supported, just start typing:
 
 ## Data
 
-All data is stored locally on your disk. To ensure peace of mind, backups are created on the disk regularly. This happens 
-at most every 2 seconds to avoid overloading your disk.
+All data is stored locally on your disk. To ensure peace of mind, backups are created every two seconds on disk. Only the
+last backup of every day is kept.
 
 To restore a backup, follow the following procedure:
 
@@ -65,16 +65,15 @@ To restore a backup, follow the following procedure:
 - [x] Filtering to-dos using queries
 - [x] Backups
 - [x] Restore backups
-- [ ] Attach a url or link to the task
+- [x] Comprehensive readme
+- [ ] Publish to raycast store
+- [ ] Attach a url or link to the task and allow opening it
 - [ ] Better state management (single state?)
 - [ ] Categories or labels
 - [ ] Automated tests
 - [ ] Allow deleting to-dos
-- [ ] Checklists in a to-do
-- [ ] Allow configuring the weights 
-- [ ] Export to file
-- [ ] Action for quickly adding a todo
-- separate commands for
+- [ ] Checklists in a todo
+- [ ] Separate commands for
   - [ ] backup management
   - [ ] Adding a new todo
 

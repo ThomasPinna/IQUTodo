@@ -37,6 +37,9 @@ export async function load_todos_from_selected_file(): Promise<Todo[]> {
   }
   const selected_file = await fs.readFile(selected_files[0].path, "utf-8");
   const maybe_todos = selected_file.split("\n");
+  if (maybe_todos[maybe_todos.length-1] == ''){
+    maybe_todos.pop()
+  }
   const confirmed_todos = [];
   while (maybe_todos.length > 0) {
     const todo_str = maybe_todos.pop() as string;
@@ -44,12 +47,12 @@ export async function load_todos_from_selected_file(): Promise<Todo[]> {
     try {
       parsed_todo = JSON.parse(todo_str);
     } catch (e) {
-      throw new Error(`Error: Todo ${confirmed_todos.length} could not be parsed`);
+      throw new Error(`Error: Todo ${confirmed_todos.length + 1} could not be parsed`);
     }
     if (is_todo(parsed_todo)) {
       confirmed_todos.push(parsed_todo);
     } else {
-      throw new Error(`Error: Todo ${confirmed_todos.length} is not a valid todo`);
+      throw new Error(`Error: Todo ${confirmed_todos.length + 1} is not a valid todo`);
     }
   }
   return confirmed_todos;
