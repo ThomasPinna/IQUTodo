@@ -29,6 +29,8 @@ These shortcuts are important to interact with the todos
 | cmd+e       | Edit the to-do                                    |
 | cmd+(u/i/q) | toggle urgency/importance/quickness               |
 | enter       | mark as completed or continue a completed task    |
+| cmd+shift+b | Show backups in finder                            |
+| cmd+shift+r | Restore a backup from a file selected in finder   |
 
 Basic filtering is supported, just start typing:
 
@@ -37,6 +39,20 @@ Basic filtering is supported, just start typing:
 | any text                | Fuzzy match the title of the todo                                        |
 | `quick=true`<br/>`q=t`  | Only show quick tasks (also works for important and urgent)              |
 | `quick=false`<br/>`q=f` | Only show tasks that are not quick (also works for important and urgent) |
+
+
+## Data
+
+All data is stored locally on your disk. To ensure peace of mind, backups are created on the disk regularly. This happens 
+at most every 2 seconds to avoid overloading your disk.
+
+To restore a backup, follow the following procedure:
+
+1. Use `cmd+shift+b` to open the default backup folder
+2. Select the backup you would like to restore
+3. In the to-do app, press `cmd+shift+r` to restore the selected file
+4. Confirm the restoration
+
 
 ## Roadmap
 
@@ -48,17 +64,19 @@ Basic filtering is supported, just start typing:
 - [x] Quick toggle priority
 - [x] Filtering to-dos using queries
 - [x] Backups
-- [ ] Restore backups
+- [x] Restore backups
 - [ ] Attach a url or link to the task
 - [ ] Better state management (single state?)
 - [ ] Categories or labels
 - [ ] Automated tests
-- [ ] Remote persistence
 - [ ] Allow deleting to-dos
 - [ ] Checklists in a to-do
 - [ ] Allow configuring the weights 
-- [ ] Import / Export
+- [ ] Export to file
 - [ ] Action for quickly adding a todo
+- separate commands for
+  - [ ] backup management
+  - [ ] Adding a new todo
 
 ## Contributions
 

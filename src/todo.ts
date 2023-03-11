@@ -57,7 +57,7 @@ export function has_text(text: string): (todo: Todo) => boolean {
 
 // helper functions, no mutations
 
-function score(todo: Todo) {
+export function priority_score(todo: Todo) {
   let score = 0
   if (todo.quick) score += 1.1
   if (todo.important) score += 2
@@ -67,12 +67,22 @@ function score(todo: Todo) {
 
 // attention, this function mutates todo_list
 function insert_todo_in_todo_list(todo: Todo, todo_list: Todo[]) {
-  const todo_score = score(todo);
-  const index = todo_list.findIndex(t => score(t) <= todo_score);
+  const todo_score = priority_score(todo);
+  const index = todo_list.findIndex(t => priority_score(t) <= todo_score);
   if (index === -1) {
     todo_list.push(todo);
   } else {
     todo_list.splice(index, 0, todo);
   }
   return todo_list;
+}
+
+export function is_todo(todo: any): todo is Todo{
+  return !(typeof todo?.id !== 'string'
+    || typeof todo?.title !== 'string'
+    || typeof todo?.isCompleted !== 'boolean'
+    || typeof todo?.urgent !== 'boolean'
+    || typeof todo?.important !== 'boolean'
+    || typeof todo?.quick !== 'boolean');
+
 }

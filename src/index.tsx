@@ -1,10 +1,11 @@
-import { ActionPanel, Icon, List } from "@raycast/api";
+import { ActionPanel, getSelectedFinderItems, Icon, List } from "@raycast/api";
 import {useEffect, useState} from "react";
 import {create_todo, edit_todo, has_text, Todo} from "./todo";
 import { load_todos, store_dones, store_todos } from "./persist";
 import {CreateTodoAction, CreateTopPriorityTodoAction} from "./todo-create.component";
 import {TodoListItems} from "./todo-list-items.component";
 import { to_backup } from "./backup";
+import { RestoreBackupAction } from "./backup-actions.component";
 
 export default function Command() {
 
@@ -82,6 +83,7 @@ export default function Command() {
                             defaultTitle={searchText}/>
           <CreateTopPriorityTodoAction onCreate={OnCreate}
                                        defaultTitle={searchText}/>
+          <RestoreBackupAction set_dones={setDones} set_todos={setTodos} />
         </ActionPanel>
       }
       isLoading={loading}
@@ -108,6 +110,8 @@ export default function Command() {
                      OnToggle={OnComplete}
                      searchText={searchText}
                      title="To-dos"
+                     set_todos={setTodos}
+                     set_dones={setDones}
       />
       <TodoListItems todos={filteredDones}
                      OnCreate={OnCreate}
@@ -115,6 +119,8 @@ export default function Command() {
                      OnToggle={OnContinue}
                      searchText={searchText}
                      title="Completed To-dos"
+                     set_todos={setTodos}
+                     set_dones={setDones}
       />
     </List>
   );

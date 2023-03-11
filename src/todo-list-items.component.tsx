@@ -1,12 +1,11 @@
 import { Todo } from "./todo";
-import { Action, ActionPanel, Icon, List } from "@raycast/api";
+import { ActionPanel, Icon, List } from "@raycast/api";
 import { ToggleTodoAction } from "./todo-toggle.component";
 import { EditTodoAction } from "./todo-edit.component";
 import { TogglePriority } from "./todo-toggle-priority.component";
 import { CreateTodoAction, CreateTopPriorityTodoAction } from "./todo-create.component";
 import { GetAccessories } from "./todo-list-accessories";
-import { BACKUP_PATH } from "./constants";
-import { BackupOpendirComponent } from "./backup-opendir.component";
+import { RestoreBackupAction, ShowBackupsAction } from "./backup-actions.component";
 
 export function TodoListItems(props: {
   todos: Todo[],
@@ -14,7 +13,9 @@ export function TodoListItems(props: {
   OnEdit: (index: number, todo: Partial<Todo>) => void,
   OnToggle: (index: number) => void,
   searchText: string,
-  title: string
+  title: string,
+  set_todos: (todo: Todo[]) => void,
+  set_dones: (todo: Todo[]) => void
 }) {
 
   return (
@@ -50,7 +51,8 @@ export function TodoListItems(props: {
                                                defaultTitle={props.searchText} />
                              <CreateTopPriorityTodoAction onCreate={props.OnCreate}
                                                           defaultTitle={props.searchText} />
-                             <BackupOpendirComponent />
+                             <ShowBackupsAction />
+                             <RestoreBackupAction set_dones={props.set_dones} set_todos={props.set_todos} />
                            </ActionPanel.Section>
                          </ActionPanel>
                        }
