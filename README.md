@@ -58,14 +58,6 @@ To restore a backup, follow the following procedure:
 
 > Ironically, the items are not necessarily in order of priority! 
 
-- [x] Create new to-dos
-- [x] Edit to-dos
-- [x] Automatic ordering 
-- [x] Quick toggle priority
-- [x] Filtering to-dos using queries
-- [x] Backups
-- [x] Restore backups
-- [x] Comprehensive readme
 - [ ] Publish to raycast store
 - [ ] Attach a url or link to the task and allow opening it
 - [ ] Better state management (single state?)
